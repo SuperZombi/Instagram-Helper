@@ -14,6 +14,10 @@ function main(){
 			bottom: 0,
 			width: "40px",
 			padding: "10px",
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "center",
+			gap: "5px",
 		})
 		document.body.appendChild(mainMenu)
 	}
@@ -43,7 +47,7 @@ function downloadButton(){
 function speedButton(){
 	let div = document.createElement("div")
 	Object.assign(div.style, {
-		cursor: "pointer",
+		
 	})
 	div.innerHTML = `
 		<svg xmlns="http://www.w3.org/2000/svg" fill="lightblue" viewBox="0 0 20 20">
@@ -51,7 +55,11 @@ function speedButton(){
 			<path d="M8.6 11.4c-.8-.8-2.8-5.7-2.8-5.7s4.9 2 5.7 2.8c.8.8.8 2 0 2.8-.9.9-2.1.9-2.9.1z"/>
 		</svg>
 	`
-	div.onclick = _=>{
+	let button = div.querySelector("svg")
+	Object.assign(button.style, {
+		cursor: "pointer",
+	})
+	button.onclick = _=>{
 
 	}
 	return div
