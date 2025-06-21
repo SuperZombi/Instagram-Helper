@@ -107,10 +107,12 @@ function speedButton(){
 		area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
 	}
 	onUrlChange(_=>{
-		let video = getCurrent("video", 50)
-		if (video){
-			video.playbackRate = currentSpeed;
-		}
+		setTimeout(_=>{
+			let video = getCurrent("video", 50)
+			if (video){
+				video.playbackRate = currentSpeed;
+			}
+		}, 500)
 	})
 	return div
 }
