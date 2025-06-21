@@ -107,7 +107,7 @@ function speedButton(){
 		area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
 	}
 	onUrlChange(_=>{
-		let video = getCurrent("video")
+		let video = getCurrent("video", 50)
 		if (video){
 			video.playbackRate = currentSpeed;
 		}
@@ -117,25 +117,32 @@ function speedButton(){
 
 
 /* Helpers */
-function isInViewport(element) {
+function isInViewport(element, percentVisible=100) {
 	const rect = element.getBoundingClientRect();
-	const height = window.innerHeight || document.documentElement.clientHeight;
-	const width = window.innerWidth || document.documentElement.clientWidth;
-	return (
-		!(rect.top == 0 && rect.left == 0 && rect.bottom == 0 && rect.right == 0) &&
-		rect.top >= 0 &&
-		rect.left >= 0 &&
-		rect.bottom <= height &&
-		rect.right <= width
-	);
+	const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+	const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+	if (rect.bottom <= 0 || rect.top >= windowHeight || rect.right <= 0 || rect.left >= windowWidth) {
+		return false;
+	}
+	const elementHeight = rect.height;
+	const elementWidth = rect.width;
+	const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+	const visibleWidth = Math.min(rect.right, windowWidth) - Math.max(rect.left, 0);
+
+	const visibleArea = visibleHeight * visibleWidth;
+	const totalArea = elementHeight * elementWidth;
+	const visibleRatio = visibleArea / totalArea;
+	return visibleRatio >= (percentVisible / 100);
 }
-function getCurrent(selector){
-	let elements = document.querySelectorAll(selector)
+
+function getCurrent(selector, percentVisible=100) {
+	const elements = document.querySelectorAll(selector);
 	for (let element of elements) {
-		if (isInViewport(element)) {
-			return element
+		if (isInViewport(element, percentVisible)) {
+			return element;
 		}
 	}
+	return null;
 }
 function urlObserver(){
 	let subs = []
