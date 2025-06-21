@@ -92,7 +92,7 @@ function speedButton(){
 		text.innerHTML = currentSpeed;
 		let video = getCurrent("video")
 		if (video){
-			video.playbackRate = input.value;
+			video.playbackRate = currentSpeed;
 		}
 	}
 
@@ -106,6 +106,12 @@ function speedButton(){
 	button.onclick = _=>{
 		area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
 	}
+	onUrlChange(_=>{
+		let video = getCurrent("video")
+		if (video){
+			video.playbackRate = currentSpeed;
+		}
+	})
 	return div
 }
 
