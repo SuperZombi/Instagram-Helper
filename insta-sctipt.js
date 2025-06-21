@@ -1,4 +1,6 @@
 var onUrlChange = urlObserver()
+var currentSpeed = 1
+
 window.onload = function() {
 	main()
 }
@@ -45,10 +47,12 @@ function downloadButton(){
 	return div
 }
 
+
 function speedButton(){
 	let div = document.createElement("div")
 	Object.assign(div.style, {
-		
+		position: "relative",
+		display: "flex",
 	})
 	div.innerHTML = `
 		<svg xmlns="http://www.w3.org/2000/svg" fill="lightblue" viewBox="0 0 20 20">
@@ -60,9 +64,54 @@ function speedButton(){
 	Object.assign(button.style, {
 		cursor: "pointer",
 	})
-	button.onclick = _=>{
 
+	let area = document.createElement("div")
+	Object.assign(area.style, {
+		position: "absolute",
+		visibility: "hidden",
+		display: "flex",
+		gap: "5px",
+		alignItems: "center",
+		top: 0,
+		bottom: 0,
+		left: 0,
+		transform: "translateX(calc(-100% - 10px))",
+	})
+
+	let input = document.createElement("input")
+	Object.assign(input, {
+		type: "range",
+		min: 1,
+		max: 2,
+		step: 0.25,
+		value: currentSpeed,
+	})
+	input.style.cursor = "ew-resize"
+	input.oninput = _=>{
+		currentSpeed = input.value;
+		text.innerHTML = currentSpeed;
+		let video = getCurrent("video")
+		if (video){
+			video.playbackRate = currentSpeed;
+		}
 	}
+
+	let text = document.createElement("span")
+	text.innerHTML = currentSpeed
+
+	area.appendChild(text)
+	area.appendChild(input)
+	div.appendChild(area)
+
+	button.onclick = _=>{
+		area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
+	}
+	onUrlChange(_=>{
+		let video = getCurrent("video")
+		if (video){
+			video.playbackRate = currentSpeed;
+		}
+	})
 	return div
 }
 
