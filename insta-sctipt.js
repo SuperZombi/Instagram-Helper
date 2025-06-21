@@ -39,7 +39,8 @@ function downloadButton(){
 		</svg>
 	`
 	div.onclick = _=>{
-
+		let video = getCurrent("video")
+		if (!video){return}
 	}
 	return div
 }
