@@ -1,5 +1,12 @@
 # Instagram Reels Helper
 
+<img src="github/images/main.png" width="600px"/>
+
+## Features
+
+- [x] Playback speed
+- [ ] Video downloading
+
 
 ## Installation:
 
