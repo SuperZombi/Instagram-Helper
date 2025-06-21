@@ -2,9 +2,20 @@ var onUrlChange = urlObserver()
 var currentSpeed = 1
 
 window.onload = function() {
-	main()
+	if (isReels()){reels()}
+	onUrlChange(_=>{
+		if (isReels()){
+			reels()
+		} else {
+			let el = document.querySelector("#insta-helper-menu")
+			if (el){el.remove()}
+		}
+	})
 }
-function main(){
+function isReels(){
+	return window.location.href.startsWith("https://www.instagram.com/reels/")
+}
+function reels(){
 	let mainMenu = document.querySelector("#insta-helper-menu")
 	if (!mainMenu){
 		mainMenu = document.createElement("div")
@@ -22,12 +33,11 @@ function main(){
 			gap: "10px",
 		})
 		document.body.appendChild(mainMenu)
+		mainMenu.appendChild(scrollUp())
+		mainMenu.appendChild(downloadButton())
+		mainMenu.appendChild(speedButton())
+		mainMenu.appendChild(scrollDown())
 	}
-
-	mainMenu.appendChild(scrollUp())
-	mainMenu.appendChild(downloadButton())
-	mainMenu.appendChild(speedButton())
-	mainMenu.appendChild(scrollDown())
 }
 
 
@@ -38,12 +48,16 @@ function scrollInit(icon, direction){
 		cursor: "pointer",
 	})
 	let container = document.querySelector("main > div")
-	div.onclick = _=>{
-		let amount = direction * container.clientHeight;
-		container.scrollBy({
-			top: amount,
-			behavior: 'smooth'
-		});
+	if (container){
+		div.onclick = _=>{
+			let amount = direction * container.clientHeight;
+			container.scrollBy({
+				top: amount,
+				behavior: 'smooth'
+			});
+		}
+	} else {
+		console.error("Reels container not found!")
 	}
 	return div
 }

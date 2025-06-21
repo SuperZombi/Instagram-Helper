@@ -3,7 +3,7 @@
    "version": "1.0",
    "name": "Insta",
    "content_scripts": [{
-      "matches": ["https://www.instagram.com/reels/*"],
+      "matches": ["https://www.instagram.com/*"],
       "js": ["insta-sctipt.js"],
       "run_at": "document_end"
    }]
