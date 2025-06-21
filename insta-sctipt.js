@@ -19,13 +19,49 @@ function main(){
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "center",
-			gap: "5px",
+			gap: "10px",
 		})
 		document.body.appendChild(mainMenu)
 	}
 
+	mainMenu.appendChild(scrollUp())
 	mainMenu.appendChild(downloadButton())
 	mainMenu.appendChild(speedButton())
+	mainMenu.appendChild(scrollDown())
+}
+
+
+function scrollInit(icon, direction){
+	let div = document.createElement("div")
+	div.innerHTML = icon
+	Object.assign(div.style, {
+		cursor: "pointer",
+	})
+	let container = document.querySelector("main > div")
+	div.onclick = _=>{
+		let amount = direction * container.clientHeight;
+		container.scrollBy({
+			top: amount,
+			behavior: 'smooth'
+		});
+	}
+	return div
+}
+function scrollUp(){
+	return scrollInit(`
+		<svg xmlns="http://www.w3.org/2000/svg" stroke="lightblue" stroke-width="1.5" fill="none" stroke-linecap="round" viewBox="0 0 24 24">
+			<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+			<path d="m8 13.78 2.87-3.06c.6-.67 1.66-.67 2.26 0L16 13.78"/>
+		</svg>
+	`, -1)
+}
+function scrollDown(){
+	return scrollInit(`
+		<svg xmlns="http://www.w3.org/2000/svg" stroke="lightblue" stroke-width="1.5" fill="none" stroke-linecap="round" viewBox="0 0 24 24">
+			<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+			<path d="m16 10.22-2.87 3.06a1.54 1.54 0 0 1-2.26 0L8 10.22"/>
+		</svg>
+	`, 1)
 }
 
 
@@ -35,9 +71,9 @@ function downloadButton(){
 		cursor: "pointer",
 	})
 	div.innerHTML = `
-		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-			<path stroke="lightblue" stroke-linecap="round" stroke-width="1.5" d="M12 7v7m0 0 3-3m-3 3-3-3"/>
-			<path stroke="lightblue" stroke-linecap="round" stroke-width="1.5" d="M16 17H8m14-5c0 4.71 0 7.07-1.46 8.54C19.07 22 16.7 22 12 22c-4.71 0-7.07 0-8.54-1.46C2 19.07 2 16.7 2 12c0-4.71 0-7.07 1.46-8.54C4.93 2 7.3 2 12 2c4.71 0 7.07 0 8.54 1.46.97.98 1.3 2.35 1.4 4.54"/>
+		<svg xmlns="http://www.w3.org/2000/svg" stroke="lightblue" stroke-width="1.5" fill="none" stroke-linecap="round" viewBox="0 0 24 24">
+			<path d="M12 7v7m0 0 3-3m-3 3-3-3"/>
+			<path d="M16 17H8m14-5c0 4.71 0 7.07-1.46 8.54C19.07 22 16.7 22 12 22c-4.71 0-7.07 0-8.54-1.46C2 19.07 2 16.7 2 12c0-4.71 0-7.07 1.46-8.54C4.93 2 7.3 2 12 2c4.71 0 7.07 0 8.54 1.46.97.98 1.3 2.35 1.4 4.54"/>
 		</svg>
 	`
 	div.onclick = _=>{
@@ -52,7 +88,6 @@ function speedButton(){
 	let div = document.createElement("div")
 	Object.assign(div.style, {
 		position: "relative",
-		display: "flex",
 	})
 	div.innerHTML = `
 		<svg xmlns="http://www.w3.org/2000/svg" fill="lightblue" viewBox="0 0 20 20">
@@ -112,7 +147,7 @@ function speedButton(){
 			if (video){
 				video.playbackRate = currentSpeed;
 			}
-		}, 500)
+		}, 250)
 	})
 	return div
 }
