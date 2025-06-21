@@ -52,6 +52,7 @@ function downloadButton(){
 	div.onclick = _=>{
 		let video = getCurrent("video")
 		if (!video){return}
+		console.log(video.src.replace("blob:", ""))
 	}
 	return div
 }
