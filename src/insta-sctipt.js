@@ -110,6 +110,7 @@ function speedButton(){
 		bottom: 0,
 		left: 0,
 		transform: "translateX(calc(-100% - 10px))",
+		userSelect: "none",
 	})
 
 	let input = document.createElement("input")
@@ -129,6 +130,15 @@ function speedButton(){
 			video.playbackRate = currentSpeed;
 		}
 	}
+	document.body.addEventListener("click", event=>{
+		let path = event.path || (event.composedPath && event.composedPath());
+		if (path.includes(area)){return}
+		else if (path.includes(button)){
+			area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
+		} else {
+			area.style.visibility = "hidden";
+		}
+	})
 
 	let text = document.createElement("span")
 	text.innerHTML = currentSpeed
@@ -137,9 +147,6 @@ function speedButton(){
 	area.appendChild(input)
 	div.appendChild(area)
 
-	button.onclick = _=>{
-		area.style.visibility = area.style.visibility == "visible" ? "hidden" : "visible"
-	}
 	onUrlChange(_=>{
 		setTimeout(_=>{
 			let video = getCurrent("video", 50)
