@@ -74,6 +74,7 @@ function downloadButton(){
 				div.style.cursor = "pointer"
 			}
 			video.currentTime = 0;
+			video.playbackRate = 1;
 			video.play();
 			recorder.start();
 			video.onended = () => recorder.stop();
