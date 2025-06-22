@@ -1,6 +1,10 @@
 var onUrlChange = urlObserver()
 var currentSpeed = 1
-
+var Settings = {
+	download: true,
+	speed: true,
+	navigation: true,
+}
 window.onload = function() {
 	if (isReels()){reels()}
 	onUrlChange(_=>{
@@ -30,10 +34,18 @@ function reels(){
 			gap: "10px",
 		})
 		document.body.appendChild(mainMenu)
-		mainMenu.appendChild(scrollButton("up"))
-		mainMenu.appendChild(downloadButton())
-		mainMenu.appendChild(speedButton())
-		mainMenu.appendChild(scrollButton("down"))
+		if (Settings.navigation){
+			mainMenu.appendChild(scrollButton("up"))
+		}
+		if (Settings.download){
+			mainMenu.appendChild(downloadButton())
+		}
+		if (Settings.speed){
+			mainMenu.appendChild(speedButton())
+		}
+		if (Settings.navigation){
+			mainMenu.appendChild(scrollButton("down"))
+		}
 	}
 }
 
