@@ -50,9 +50,34 @@ function downloadButton(){
 		</svg>
 	`
 	div.onclick = _=>{
-		let video = getCurrent("video")
-		if (!video){return}
-		console.log(video.src.replace("blob:", ""))
+		if (!div.getAttribute("disabled")){
+			div.setAttribute("disabled", true)
+			div.style.cursor = "wait"
+			let video = getCurrent("video")
+			if (!video){return}
+			let stream = video.captureStream()
+			let recordedChunks = []
+			let recorder = new MediaRecorder(stream, { mimeType : 'video/webm' })
+			recorder.ondataavailable = e=>{
+				if (e.data.size > 0) {
+					recordedChunks.push(e.data)
+				}
+			}
+			recorder.onstop = _=>{
+				let blob = new Blob(recordedChunks, { type: 'video/webm' });
+				let url = URL.createObjectURL(blob)
+				let a = document.createElement('a')
+				a.href = url
+				a.download = `${getReelId(window.location.href)}.webm`
+				a.click()
+				div.removeAttribute("disabled")
+				div.style.cursor = "pointer"
+			}
+			video.currentTime = 0;
+			video.play();
+			recorder.start();
+			video.onended = () => recorder.stop();
+		}
 	}
 	return div
 }
