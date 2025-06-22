@@ -5,7 +5,7 @@
 ## Features
 
 - [x] Playback speed
-- [ ] Video downloading
+- [x] Video downloading
 
 
 ## Installation:
