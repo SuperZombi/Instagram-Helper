@@ -40,6 +40,7 @@ function reels(){
 
 function downloadButton(){
 	let div = document.createElement("div")
+	div.title = "Download"
 	Object.assign(div.style, {
 		cursor: "pointer",
 	})
@@ -86,6 +87,7 @@ function downloadButton(){
 
 function speedButton(){
 	let div = document.createElement("div")
+	div.title = "Speed"
 	Object.assign(div.style, {
 		position: "relative",
 	})
@@ -163,6 +165,7 @@ function speedButton(){
 
 function scrollInit(icon, direction){
 	let div = document.createElement("div")
+	div.title = direction > 0 ? "Next" : "Previous"
 	div.innerHTML = icon
 	Object.assign(div.style, {
 		cursor: "pointer",
