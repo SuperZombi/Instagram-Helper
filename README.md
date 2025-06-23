@@ -1,4 +1,4 @@
-<img src="github/images/icon.png" height="128" align="right"></img>
+<img src="github/images/icon.png" height="150" align="right"></img>
 
 # Instagram Reels Helper
 
@@ -9,14 +9,15 @@
 
 <img src="github/images/main.png" width="600px"/>
 
-
 ## Features
 
 - Playback speed
 - Video downloading
 
-
 ## Installation:
+
+### <img width="18px" src="https://www.svgrepo.com/show/452180/chrome.svg"> [Chrome Web Store](https://chrome.google.com/webstore/detail/ainljmjbmkiophfkobhlpolkmmkeapkd)
+### <img width="18px" src="https://www.svgrepo.com/show/452204/firefox.svg"><img src="https://img.shields.io/badge/pending-gray"> Firefox Extension Workshop 
 
 ### Chrome (dev):
   1. Download `.zip`.
