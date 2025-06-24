@@ -5,7 +5,13 @@
    "description": "Playback Speed, Downloading.",
    "content_scripts": [{
       "matches": ["https://www.instagram.com/*"],
-      "js": ["insta-sctipt.js"],
+      "js": [
+         "scripts/utils.js",
+         "scripts/download.js",
+         "scripts/scroll.js",
+         "scripts/speed.js",
+         "insta-sctipt.js"
+      ],
       "run_at": "document_end"
    }],
    "icons": {
