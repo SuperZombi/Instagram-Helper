@@ -201,7 +201,7 @@ function scrollButton(direction){
 	let container = document.querySelector("main > div")
 	if (container){
 		div.onclick = _=>{
-			let amount = direction === "up" ? -1 : 1 * container.clientHeight;
+			let amount = (direction === "up" ? -1 : 1) * container.clientHeight;
 			container.scrollBy({
 				top: amount,
 				behavior: 'smooth'
