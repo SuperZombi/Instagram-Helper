@@ -4,9 +4,30 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="input.css">
 	<link rel="stylesheet" href="options.css">
-	<script src="options.js"></script>
+	<script src="options.js" defer></script>
 </head>
 <body>
-	<input type="checkbox" class="toggle">
+	<div class="main">
+		<div class="row">
+			<span>Speed Controller</span>
+			<input name="speed" type="checkbox" class="toggle setting">
+		</div>
+		<div class="row">
+			<span>Navigation buttons</span>
+			<input name="navigation" type="checkbox" class="toggle setting">
+		</div>
+		<div class="row">
+			<span>Download button</span>
+			<input name="download" type="checkbox" class="toggle setting">
+		</div>
+		<div class="row parrent">
+			<span>Downloader</span>
+			<select name="downloader" class="setting">
+				<option value="build-in">Build-in</option>
+			</select>
+		</div>
+
+		<button id="save">Save</button>
+	</div>
 </body>
 </html>

@@ -1,12 +1,14 @@
+var browser = chrome || browser;
 var onUrlChange = urlObserver()
 var currentSpeed = 1
-var Settings = {
+var Settings = {}
+browser.storage.sync.get({
 	download: true,
 	downloader: "build-in",
 	speed: true,
 	navigation: true,
-}
-window.onload = function() {
+}, results => { Settings = results; })
+window.onload = _=> {
 	if (isReels()){reels()}
 	onUrlChange(_=>{
 		if (isReels()){
