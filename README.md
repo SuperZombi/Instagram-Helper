@@ -3,7 +3,7 @@
 # Instagram Reels Helper
 
 <p align="right">
-    <img align="left" src="https://shields.io/badge/version-v1.0.0-blue">
+    <img align="left" src="https://shields.io/badge/version-v1.1.0-blue">
     <a href="#donate"><img src="https://shields.io/badge/💲-Support_the_Project-2ea043"></a>
 </p>
 
