@@ -17,6 +17,14 @@
    "icons": {
       "128": "icon-128.png"
    },
+   "permissions": [ "storage" ],
+   "action": {
+      "default_popup": "menu/options.html"
+   },
+   "options_ui": {
+      "open_in_tab": false,
+      "page": "menu/options.html"
+   },
    "homepage_url": "https://github.com/SuperZombi/Instagram-Helper",
    "browser_specific_settings": {
       "gecko": {

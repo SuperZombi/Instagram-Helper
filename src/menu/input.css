@@ -1,0 +1,42 @@
+.toggle,.toggle::after{
+	transition: all 100ms ease-out;
+}
+.toggle{
+	--height: 20px;
+	--width: 40px;
+	--padding: 3px;
+	appearance: none;
+	background-color: #dfe1e4;
+	border-radius: 50px;
+	border: none;
+	outline: 0;
+	margin: 0;
+	height: var(--height);
+	width: var(--width);
+	position: relative;
+	cursor: pointer;
+}
+.toggle:hover{
+	background-color: #c9cbcd;
+}
+.toggle:checked{
+	background-color: #6e79d6;
+}
+.toggle::after{
+	--ball-size: calc(var(--height) - var(--padding) * 2);
+	background-color: #fff;
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	height: var(--ball-size);
+	width: var(--ball-size);
+	left: var(--padding);
+	top: var(--padding);
+}
+.toggle:checked::after{
+	background-color: #fff;
+	left: calc(var(--width) - var(--ball-size) - var(--padding));
+}
+.toggle:checked:hover{
+	background-color: #535db3;
+}
