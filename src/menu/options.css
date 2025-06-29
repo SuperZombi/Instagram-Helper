@@ -1,13 +1,31 @@
 body{
 	font-size: 14pt;
 	white-space: nowrap;
+	font-family: sans-serif;
+}
+#header{
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3em;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0.6em;
+}
+#header img{
+	height: 24px;
+}
+#header:hover{
+	text-decoration: underline;
 }
 .main{
 	width: 220px;
 	min-width: fit-content;
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
+	gap: 8px;
 	padding: 5px 10px;
 }
 .row{

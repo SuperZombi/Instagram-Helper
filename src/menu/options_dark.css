@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #1c1a26;
+		color: #e4e4e4;
+	}
+	select{
+		background: #38344c;
+		color: #e4e4e4;
+		border-color: #767676;
+	}
+}
