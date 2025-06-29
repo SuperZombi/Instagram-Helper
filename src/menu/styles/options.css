@@ -2,6 +2,8 @@ body{
 	font-size: 14pt;
 	white-space: nowrap;
 	font-family: sans-serif;
+	width: 230px;
+	min-width: fit-content;
 }
 #header{
 	text-decoration: none;
@@ -21,8 +23,6 @@ body{
 	text-decoration: underline;
 }
 .main{
-	width: 230px;
-	min-width: fit-content;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;

@@ -1,0 +1,32 @@
+{
+   "speedController": {
+      "message": "Швидкість програвання"
+   },
+   "navigationButtons": {
+      "message": "Кнопки навігації"
+   },
+   "downloadButton": {
+      "message": "Кнопка завантаження"
+   },
+   "downloader": {
+      "message": "Завантажувач"
+   },
+   "downloader_build_in": {
+      "message": "Вбудований"
+   },
+   "saveButton": {
+      "message": "Зберегти"
+   },
+   "downloadTitle": {
+      "message": "Завантажити"
+   },
+   "scrollPrevious": {
+      "message": "Попередній"
+   },
+   "scrollNext": {
+      "message": "Наступний"
+   },
+   "speed": {
+      "message": "Швидкість"
+   }
+}

@@ -1,0 +1,32 @@
+{
+   "speedController": {
+      "message": "Скорость воспроизведения"
+   },
+   "navigationButtons": {
+      "message": "Кнопки навигации"
+   },
+   "downloadButton": {
+      "message": "Кнопка скачивания"
+   },
+   "downloader": {
+      "message": "Загрузчик"
+   },
+   "downloader_build_in": {
+      "message": "Встроенный"
+   },
+   "saveButton": {
+      "message": "Сохранить"
+   },
+   "downloadTitle": {
+      "message": "Скачать"
+   },
+   "scrollPrevious": {
+      "message": "Предыдущий"
+   },
+   "scrollNext": {
+      "message": "Следующий"
+   },
+   "speed": {
+      "message": "Скорость"
+   }
+}
