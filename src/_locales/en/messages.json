@@ -1,0 +1,23 @@
+{
+   "speedController": {
+      "message": "Speed Controller"
+   },
+   "navigationButtons": {
+      "message": "Navigation buttons"
+   },
+   "downloadButton": {
+      "message": "Download button"
+   },
+   "downloader": {
+      "message": "Downloader"
+   },
+   "downloader_build_in": {
+      "message": "Build-in"
+   },
+   "downloader_build_in": {
+      "message": "Build-in"
+   },
+   "saveButton": {
+      "message": "Save"
+   }
+}

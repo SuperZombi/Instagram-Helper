@@ -2,10 +2,10 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="input.css">
-	<link rel="stylesheet" href="options.css">
-	<link rel="stylesheet" href="options_dark.css">
-	<script src="options.js" defer></script>
+	<link rel="stylesheet" href="styles/input.css">
+	<link rel="stylesheet" href="styles/options.css">
+	<link rel="stylesheet" href="styles/options_dark.css">
+	<script src="scripts/options.js" defer></script>
 </head>
 <body>
 	<a id="header" href="https://github.com/SuperZombi/Instagram-Helper" target="_blank">
@@ -15,25 +15,26 @@
 	<hr>
 	<div class="main">
 		<div class="row">
-			<span>Speed Controller</span>
+			<span>__MSG_speedController__</span>
 			<input name="speed" type="checkbox" class="toggle setting">
 		</div>
 		<div class="row">
-			<span>Navigation buttons</span>
+			<span>__MSG_navigationButtons__</span>
 			<input name="navigation" type="checkbox" class="toggle setting">
 		</div>
 		<div class="row">
-			<span>Download button</span>
+			<span>__MSG_downloadButton__</span>
 			<input name="download" type="checkbox" class="toggle setting">
 		</div>
 		<div class="row parrent">
-			<span>Downloader</span>
+			<span>__MSG_downloader__</span>
 			<select name="downloader" class="setting">
-				<option value="build-in">Build-in</option>
+				<option value="build-in">__MSG_downloader_build_in__</option>
 			</select>
 		</div>
 
-		<button id="save">Save</button>
+		<button id="save">__MSG_saveButton__</button>
 	</div>
+	<script src="scripts/localize.js"></script>
 </body>
 </html>

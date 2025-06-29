@@ -21,7 +21,7 @@ body{
 	text-decoration: underline;
 }
 .main{
-	width: 220px;
+	width: 230px;
 	min-width: fit-content;
 	display: flex;
 	flex-direction: column;

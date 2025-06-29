@@ -17,6 +17,7 @@
    "icons": {
       "128": "images/icon-128.png"
    },
+   "default_locale": "en",
    "permissions": [ "storage" ],
    "action": {
       "default_popup": "menu/options.html"
