@@ -1,6 +1,6 @@
 function downloadButton(downloader){
 	let div = document.createElement("div")
-	div.title = "Download"
+	div.title = browser.i18n.getMessage("downloadTitle")
 	Object.assign(div.style, {
 		cursor: "pointer",
 	})

@@ -4,7 +4,7 @@ function scrollButton(direction){
 		cursor: "pointer",
 	})
 	if (direction === "up"){
-		div.title = "Previous"
+		div.title = browser.i18n.getMessage("scrollPrevious")
 		div.innerHTML = `
 			<svg xmlns="http://www.w3.org/2000/svg" stroke="lightblue" stroke-width="1.5" fill="none" stroke-linecap="round" viewBox="0 0 24 24">
 				<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
@@ -13,7 +13,7 @@ function scrollButton(direction){
 		`
 	}
 	else if (direction === "down"){
-		div.title = "Next"
+		div.title = browser.i18n.getMessage("scrollNext")
 		div.innerHTML = `
 			<svg xmlns="http://www.w3.org/2000/svg" stroke="lightblue" stroke-width="1.5" fill="none" stroke-linecap="round" viewBox="0 0 24 24">
 				<path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>

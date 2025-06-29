@@ -1,6 +1,6 @@
 function speedButton(){
 	let div = document.createElement("div")
-	div.title = "Speed"
+	div.title = browser.i18n.getMessage("speed")
 	Object.assign(div.style, {
 		position: "relative",
 	})

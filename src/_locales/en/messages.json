@@ -19,5 +19,17 @@
    },
    "saveButton": {
       "message": "Save"
+   },
+   "downloadTitle": {
+      "message": "Download"
+   },
+   "scrollPrevious": {
+      "message": "Previous"
+   },
+   "scrollNext": {
+      "message": "Next"
+   },
+   "speed": {
+      "message": "Speed"
    }
 }
