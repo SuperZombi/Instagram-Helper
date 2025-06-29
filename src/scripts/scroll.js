@@ -24,11 +24,22 @@ function scrollButton(direction){
 	let container = document.querySelector("main > div")
 	if (container){
 		div.onclick = _=>{
-			let amount = (direction === "up" ? -1 : 1) * container.clientHeight;
-			container.scrollBy({
-				top: amount,
-				behavior: 'smooth'
-			});
+			let neighbours = getNeighbours("video")
+			if (direction === "up" && neighbours.previous){
+				neighbours.previous.scrollIntoView({
+					behavior: 'smooth',
+					block: "end"
+				})
+			}
+			else if (direction === "down" && neighbours.next){
+				neighbours.next.scrollIntoView({
+					behavior: 'smooth',
+					block: "end"
+				})
+			}
+			else {
+				console.log("Neighbours not found!")
+			}
 		}
 	} else {
 		console.error("Reels container not found!")

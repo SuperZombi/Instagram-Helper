@@ -32,6 +32,25 @@ function getCurrent(selector, percentVisible=100) {
 	}
 	return null;
 }
+function getNeighbours(selector, percentVisible=100){
+	const elements = document.querySelectorAll(selector);
+	let previous = null;
+	let ready = false;
+	for (let element of elements) {
+		if (ready){
+			return {
+				"previous": previous,
+				"next": element
+			}
+		}
+		if (isInViewport(element, percentVisible)) {
+			ready = true
+		} else {
+			previous = element
+		}
+	}
+	return {"previous":previous,"next":null}
+}
 function urlObserver(){
 	let subs = []
 	let oldUrl = window.location.href
