@@ -1,4 +1,4 @@
-<img src="github/images/icon.png" height="150" align="right"></img>
+<img src="github/images/icon.png" width="150" align="right"></img>
 
 # Instagram Reels Helper
 
